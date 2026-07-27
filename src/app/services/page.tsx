@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { ArrowUpRight, Check } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Section, Eyebrow } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { Icon } from "@/components/ui/icon-map";
 import { Button } from "@/components/ui/button";
+import { ServiceCard } from "@/components/services/service-card";
 import { services } from "@/content/services";
 import { site } from "@/content/site";
 
@@ -45,19 +46,7 @@ export default function ServicesPage() {
                   <ArrowUpRight className="h-4 w-4" strokeWidth={1.75} />
                 </Button>
               </div>
-              <div className="glass-surface glow-border rounded-2xl p-8">
-                <h3 className="text-sm font-medium uppercase tracking-wide text-fg-faint">Key Benefits</h3>
-                <ul className="mt-5 space-y-4">
-                  {service.benefits.map((benefit) => (
-                    <li key={benefit} className="flex items-start gap-3">
-                      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-secondary/15 text-secondary">
-                        <Check className="h-3.5 w-3.5" strokeWidth={2.5} />
-                      </span>
-                      <span className="text-sm text-fg">{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <ServiceCard service={service} />
             </Reveal>
           </Section>
         ))}

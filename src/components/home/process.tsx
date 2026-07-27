@@ -1,6 +1,9 @@
 import { Section, Eyebrow } from "@/components/ui/section";
 import { Reveal, RevealGroup, RevealItem } from "@/components/ui/reveal";
+import { Marquee } from "@/components/ui/marquee";
+import { Icon } from "@/components/ui/icon-map";
 import { processSteps } from "@/content/process";
+import { industries } from "@/content/industries";
 
 export function Process() {
   return (
@@ -27,6 +30,20 @@ export function Process() {
           ))}
         </RevealGroup>
       </div>
+
+      <Reveal delay={0.1} className="mt-16 border-t border-border pt-10">
+        <p className="text-center text-xs uppercase tracking-[0.14em] text-fg-faint">Industries We Serve</p>
+        <div className="mt-6">
+          <Marquee>
+            {industries.map((industry) => (
+              <span key={industry.slug} className="flex items-center gap-2 text-sm text-fg-muted">
+                <Icon name={industry.icon} className="h-4 w-4 text-fg-faint" />
+                {industry.name}
+              </span>
+            ))}
+          </Marquee>
+        </div>
+      </Reveal>
     </Section>
   );
 }

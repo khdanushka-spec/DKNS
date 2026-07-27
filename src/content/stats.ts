@@ -10,6 +10,17 @@ export const stats: Stat[] = [
   { label: "Client Satisfaction", value: 98, suffix: "%" },
   { label: "Years of Experience", value: 8, suffix: "+" },
   { label: "Average Performance Score", value: 96, suffix: "/100" },
+  { label: "AI Systems Delivered", value: 18, suffix: "+" },
+  { label: "Clients Served", value: 25, suffix: "+" },
+  { label: "Countries Served", value: 6, suffix: "+" },
+];
+
+/** Illustrative subset shown in the hero stats row. */
+export const heroStats = [
+  stats.find((s) => s.label === "Projects Completed")!,
+  stats.find((s) => s.label === "AI Systems Delivered")!,
+  stats.find((s) => s.label === "Clients Served")!,
+  stats.find((s) => s.label === "Countries Served")!,
 ];
 
 export const whyChooseUs = [

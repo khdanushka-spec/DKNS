@@ -41,7 +41,7 @@ export function InteractivePortfolio() {
               className="glass-surface glow-border group block h-full overflow-hidden rounded-2xl"
             >
               <div className="relative h-56 p-3">
-                <DeviceMockup gradient={project.coverGradient} hovered={hoveredSlug === project.slug} />
+                <DeviceMockup gradient={project.coverGradient} hovered={hoveredSlug === project.slug} name={project.name} />
                 <Badge variant="overlay" className="absolute left-6 top-6">
                   {project.industry}
                 </Badge>
