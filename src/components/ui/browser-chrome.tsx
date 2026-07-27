@@ -4,9 +4,9 @@ import { cn } from "@/lib/utils";
 
 /**
  * Shared browser-chrome frame (traffic-light dots + fake URL bar) used by
- * DeviceMockup and the hero DashboardPreview — an illustrative mockup, never
- * a real screenshot/iframe (see HANDOVER.md: portfolio projects are
- * fictional placeholders with no real URLs).
+ * DeviceMockup — an illustrative mockup, never a real screenshot/iframe (see
+ * HANDOVER.md: portfolio projects are fictional placeholders with no real
+ * URLs).
  */
 export function BrowserChrome({
   domain,

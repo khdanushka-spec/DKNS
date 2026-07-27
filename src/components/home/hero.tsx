@@ -9,7 +9,6 @@ import { RevealGroup, RevealItem } from "@/components/ui/reveal";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
 import { EcosystemCanvas } from "@/components/hero/ecosystem-canvas";
 import { AmbientParticles } from "@/components/hero/ambient-particles";
-import { DashboardPreview } from "@/components/hero/dashboard-preview";
 import { ecosystemNodes, ecosystemEdges } from "@/content/ecosystem";
 import { heroStats } from "@/content/stats";
 
@@ -29,8 +28,6 @@ export function Hero() {
       />
 
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-bg/40 via-bg/70 to-bg" />
-
-      <DashboardPreview />
 
       <Container className="relative z-10 flex flex-1 flex-col items-center justify-center text-center">
         <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
