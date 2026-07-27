@@ -64,9 +64,9 @@ export function Navbar() {
       )}
     >
       <Container className="flex h-18 items-center justify-between py-4">
-        <Link href="/" className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight">
-          <Image src="/logo.png" alt="" width={32} height={32} className="h-8 w-8 rounded-lg object-cover" aria-hidden="true" />
-          {site.name}
+        <Link href="/" className="flex items-center gap-2.5 font-display text-lg font-semibold tracking-tight">
+          <Image src="/logo.png" alt="" width={40} height={40} className="h-10 w-10 shrink-0 rounded-lg object-cover" aria-hidden="true" />
+          <span className="leading-none">{site.name}</span>
         </Link>
 
         <nav
