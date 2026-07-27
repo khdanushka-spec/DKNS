@@ -63,7 +63,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
             Back to Blog
           </Link>
           <Badge className="mt-6">{post.category}</Badge>
-          <h1 className="mt-4 font-display text-4xl font-medium tracking-tight md:text-5xl">{post.title}</h1>
+          <h1 className="mt-4 font-display text-display-2">{post.title}</h1>
           <div className="mt-4 flex items-center gap-3 text-sm text-fg-faint">
             <span>{post.author}</span>
             <span aria-hidden="true">·</span>

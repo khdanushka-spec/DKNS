@@ -47,7 +47,7 @@ export function TransformationTimeline() {
           <span className="inline-flex items-center rounded-full border border-primary-foreground/20 px-3.5 py-1.5 text-xs font-medium uppercase tracking-[0.14em] text-primary-foreground/70">
             Transformation
           </span>
-          <h2 className="mt-5 max-w-xl font-display text-3xl font-medium tracking-tight md:text-5xl">
+          <h2 className="mt-5 max-w-xl font-display text-display-2">
             From business today to market leader
           </h2>
         </div>
@@ -56,13 +56,13 @@ export function TransformationTimeline() {
           {transformationStages.map((stage, i) => (
             <div
               key={stage.label}
-              className="flex w-[78vw] shrink-0 flex-col justify-between rounded-3xl border border-primary-foreground/15 bg-primary-foreground/5 p-8 sm:w-[420px]"
+              className="flex w-[78vw] shrink-0 flex-col justify-between rounded-3xl border border-primary-foreground/15 bg-primary-foreground/8 p-8 backdrop-blur-sm transition-colors hover:border-primary-foreground/30 sm:w-[420px]"
             >
               <span className="font-display text-sm text-primary-foreground/50">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <div className="mt-10">
-                <h3 className="font-display text-2xl font-medium md:text-3xl">{stage.label}</h3>
+                <h3 className="font-display text-display-3">{stage.label}</h3>
                 <p className="mt-3 text-primary-foreground/70">{stage.description}</p>
               </div>
               {i < transformationStages.length - 1 && (

@@ -32,23 +32,29 @@
 
   --success: #0f9d63;
   --danger: #b3452f;
+
+  /* Signature gradient + glow — sparing "AI-tech" moments: hero glows,
+     glass-card borders-on-hover, gradient CTA buttons */
+  --glow-primary: rgba(12, 61, 43, 0.35);
+  --glow-secondary: rgba(15, 157, 99, 0.35);
+  --gradient-signature: linear-gradient(135deg, #0c3d2b 0%, #0f9d63 55%, #1c7a8c 100%);
 }
 
 .dark {
   color-scheme: dark;
 
-  /* Almost Black */
-  --bg: #08090a;
-  --bg-elevated: #111413;
-  --bg-subtle: #161a18;
+  /* Almost Black, tuned slightly cooler/deeper for glass legibility */
+  --bg: #06070a;
+  --bg-elevated: #0e1210;
+  --bg-subtle: #131817;
 
   /* Warm White text */
   --fg: #f6f4ec;
   --fg-muted: #a8b2ac;
   --fg-faint: #707a75;
 
-  --border: rgba(246, 244, 236, 0.1);
-  --border-strong: rgba(246, 244, 236, 0.18);
+  --border: rgba(246, 244, 236, 0.08);
+  --border-strong: rgba(246, 244, 236, 0.16);
 
   /* Emerald reads better than deep forest on near-black */
   --primary: #34d399;
@@ -63,6 +69,10 @@
 
   --success: #34d399;
   --danger: #e2836b;
+
+  --glow-primary: rgba(52, 211, 153, 0.35);
+  --glow-secondary: rgba(34, 197, 143, 0.3);
+  --gradient-signature: linear-gradient(135deg, #34d399 0%, #22c58f 45%, #2dd4bf 100%);
 }
 
 @theme inline {
@@ -89,6 +99,9 @@
   --color-success: var(--success);
   --color-danger: var(--danger);
 
+  --color-glow-primary: var(--glow-primary);
+  --color-glow-secondary: var(--glow-secondary);
+
   /* Fixed editorial tones — same value in both themes, used for deliberate
      high-contrast "printed page" moments (Command Center, Knowledge Center) */
   --color-ivory: #f3ede0;
@@ -97,9 +110,18 @@
   --color-charcoal-foreground: #f3ede0;
 
   --font-sans: var(--font-body);
-  --font-display: var(--font-heading);
+  --font-display: var(--font-body);
 
   --container-content: 1280px;
+
+  /* Fluid display type scale — Apple/Vercel-style oversized, tight-tracked
+     headlines. Replaces ad hoc text-4xl..text-8xl literals sitewide. */
+  --text-display-1: clamp(2.75rem, 2rem + 3.5vw, 5.5rem);
+  --text-display-1--line-height: 1.02;
+  --text-display-2: clamp(2.25rem, 1.75rem + 2.4vw, 3.75rem);
+  --text-display-2--line-height: 1.06;
+  --text-display-3: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --text-display-3--line-height: 1.15;
 }
 
 * {
@@ -122,7 +144,54 @@ body {
 }
 
 .font-display {
-  font-family: var(--font-heading), ui-serif, serif;
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+/* Standardized glass recipe — backing implementation for glass-card and
+   the navbar/mega-menu; consolidates 3 previously-inconsistent ad hoc
+   blur/opacity combos into one. */
+.glass-surface {
+  background: color-mix(in oklab, var(--bg-elevated) 72%, transparent);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid var(--border);
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.06) inset,
+    0 20px 40px -20px rgba(0, 0, 0, 0.35);
+  transition: border-color 0.2s ease;
+}
+
+.glass-surface:hover {
+  border-color: var(--border-strong);
+}
+
+/* Gradient border-on-hover — the signature "AI-tech" glass moment.
+   Standard double-layer mask trick so it works on any border-radius. */
+.glow-border {
+  position: relative;
+}
+
+.glow-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--gradient-signature);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.glow-border:hover::before {
+  opacity: 1;
 }
 
 h1,

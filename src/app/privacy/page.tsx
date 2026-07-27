@@ -12,7 +12,7 @@ export default function PrivacyPage() {
   return (
     <Section className="pt-20 md:pt-28">
       <div className="mx-auto max-w-2xl">
-        <h1 className="font-display text-4xl font-medium tracking-tight">Privacy Policy</h1>
+        <h1 className="font-display text-display-2">Privacy Policy</h1>
         <p className="mt-2 text-sm text-fg-faint">Last updated: {new Date().toLocaleDateString("en-AU", { year: "numeric", month: "long", day: "numeric" })}</p>
 
         <div className="prose-legal mt-10 space-y-8 text-fg-muted">

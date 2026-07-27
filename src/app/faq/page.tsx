@@ -28,7 +28,7 @@ export default function FaqPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Reveal className="mx-auto max-w-2xl text-center">
         <Eyebrow>FAQ</Eyebrow>
-        <h1 className="mt-5 font-display text-5xl font-medium tracking-tight md:text-6xl">
+        <h1 className="mt-5 font-display text-display-1">
           Common questions, answered
         </h1>
       </Reveal>

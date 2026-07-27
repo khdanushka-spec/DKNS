@@ -2,15 +2,17 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
-type ButtonVariant = "primary" | "secondary" | "ghost";
+type ButtonVariant = "primary" | "secondary" | "ghost" | "gradient";
 type ButtonSize = "md" | "lg";
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    "bg-primary text-primary-foreground hover:opacity-90 shadow-[0_1px_0_0_rgba(255,255,255,0.15)_inset]",
+    "bg-primary text-primary-foreground hover:opacity-90 shadow-[0_1px_0_0_rgba(255,255,255,0.15)_inset] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.15)_inset,0_0_24px_-6px_var(--color-glow-primary)]",
   secondary:
     "bg-bg-elevated text-fg border border-border-strong hover:border-fg-faint",
   ghost: "text-fg hover:bg-bg-subtle",
+  gradient:
+    "text-primary-foreground shadow-[0_1px_0_0_rgba(255,255,255,0.15)_inset] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.15)_inset,0_0_30px_-6px_var(--color-glow-secondary)] [background-image:var(--gradient-signature)]",
 };
 
 const sizeClasses: Record<ButtonSize, string> = {

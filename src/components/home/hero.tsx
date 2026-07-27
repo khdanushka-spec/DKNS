@@ -31,7 +31,7 @@ export function Hero() {
           </Eyebrow>
         </motion.div>
 
-        <h1 className="mt-8 max-w-4xl font-display text-5xl font-medium leading-[1.05] tracking-tight md:text-7xl lg:text-8xl">
+        <h1 className="mt-8 max-w-4xl font-display text-display-1">
           {words.map((word, i) => (
             <motion.span
               key={word + i}

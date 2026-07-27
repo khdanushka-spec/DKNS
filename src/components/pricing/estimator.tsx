@@ -22,7 +22,7 @@ export function Estimator() {
   }
 
   return (
-    <div className="grid gap-8 rounded-3xl border border-border bg-bg-elevated p-6 md:p-10 lg:grid-cols-[1.4fr_1fr]">
+    <div className="glass-surface grid gap-8 rounded-3xl p-6 md:p-10 lg:grid-cols-[1.4fr_1fr]">
       <div className="space-y-8">
         <div>
           <h3 className="text-sm font-medium uppercase tracking-wide text-fg-faint">1. Project Type</h3>
@@ -77,10 +77,15 @@ export function Estimator() {
         </div>
       </div>
 
-      <div className="flex flex-col justify-between rounded-2xl bg-bg-subtle p-7">
+      <div className="relative flex flex-col justify-between overflow-hidden rounded-2xl bg-bg-subtle p-7">
+        <div
+          className="absolute inset-x-0 top-0 h-1"
+          style={{ backgroundImage: "var(--gradient-signature)" }}
+          aria-hidden="true"
+        />
         <div>
           <h3 className="text-sm font-medium uppercase tracking-wide text-fg-faint">Estimated Investment</h3>
-          <div className="mt-3 font-display text-4xl font-medium text-primary">
+          <div className="mt-3 font-display text-4xl">
             ${total.toLocaleString("en-AU")}
             <span className="text-lg text-fg-faint"> AUD+</span>
           </div>

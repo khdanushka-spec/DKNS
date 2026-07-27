@@ -19,7 +19,7 @@ export default function AboutPage() {
       <Section className="pb-8 pt-20 text-center md:pt-28">
         <Reveal>
           <Eyebrow>About Us</Eyebrow>
-          <h1 className="mx-auto mt-5 max-w-2xl font-display text-5xl font-medium tracking-tight md:text-6xl">
+          <h1 className="mx-auto mt-5 max-w-2xl font-display text-display-1">
             Building the digital backbone of ambitious businesses
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-fg-muted">{site.description}</p>
@@ -28,11 +28,11 @@ export default function AboutPage() {
 
       <Section className="pt-0">
         <div className="grid gap-6 md:grid-cols-2">
-          <Reveal className="rounded-2xl border border-border bg-bg-elevated p-8">
+          <Reveal className="glass-surface rounded-2xl p-8">
             <Eyebrow>Mission</Eyebrow>
             <p className="mt-4 font-display text-2xl font-medium leading-snug">{site.mission}</p>
           </Reveal>
-          <Reveal delay={0.1} className="rounded-2xl border border-border bg-bg-elevated p-8">
+          <Reveal delay={0.1} className="glass-surface rounded-2xl p-8">
             <Eyebrow>Vision</Eyebrow>
             <p className="mt-4 font-display text-2xl font-medium leading-snug">{site.vision}</p>
           </Reveal>
@@ -42,11 +42,11 @@ export default function AboutPage() {
       <Section className="bg-bg-subtle/40">
         <Reveal className="mx-auto max-w-2xl text-center">
           <Eyebrow>Our Values</Eyebrow>
-          <h2 className="mt-5 font-display text-4xl font-medium tracking-tight md:text-5xl">What guides our work</h2>
+          <h2 className="mt-5 font-display text-display-2">What guides our work</h2>
         </Reveal>
         <RevealGroup className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2">
           {values.map((value) => (
-            <RevealItem key={value.title} className="rounded-2xl border border-border bg-bg-elevated p-7">
+            <RevealItem key={value.title} className="glass-surface rounded-2xl p-7">
               <h3 className="font-display text-xl font-medium">{value.title}</h3>
               <p className="mt-2 text-sm text-fg-muted">{value.description}</p>
             </RevealItem>
@@ -57,11 +57,11 @@ export default function AboutPage() {
       <Section>
         <Reveal className="mx-auto max-w-2xl text-center">
           <Eyebrow>The Team</Eyebrow>
-          <h2 className="mt-5 font-display text-4xl font-medium tracking-tight md:text-5xl">Who you&apos;ll work with</h2>
+          <h2 className="mt-5 font-display text-display-2">Who you&apos;ll work with</h2>
         </Reveal>
         <RevealGroup className="mt-14 flex justify-center">
           {team.map((member) => (
-            <RevealItem key={member.name} className="max-w-sm rounded-2xl border border-border bg-bg-elevated p-8 text-center">
+            <RevealItem key={member.name} className="max-w-sm glass-surface rounded-2xl p-8 text-center">
               <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 font-display text-2xl font-medium text-primary">
                 {member.name.split(" ").map((n) => n[0]).join("")}
               </div>
@@ -75,7 +75,7 @@ export default function AboutPage() {
 
       <Section className="text-center">
         <Reveal>
-          <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+          <h2 className="font-display text-display-2">
             Want to work together?
           </h2>
           <Button href="/contact" size="lg" className="mt-7">

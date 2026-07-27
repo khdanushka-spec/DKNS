@@ -6,7 +6,7 @@ export default function NotFound() {
   return (
     <Section className="flex min-h-[70vh] flex-col items-center justify-center py-32 text-center">
       <Eyebrow>404</Eyebrow>
-      <h1 className="mt-5 font-display text-5xl font-medium tracking-tight md:text-6xl">
+      <h1 className="mt-5 font-display text-display-1">
         This page doesn&apos;t exist
       </h1>
       <p className="mt-4 max-w-md text-lg text-fg-muted">

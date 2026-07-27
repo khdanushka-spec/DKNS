@@ -24,7 +24,7 @@ export default function ContactPage() {
     <Section className="pt-20 md:pt-28">
       <Reveal className="mx-auto max-w-2xl text-center">
         <Eyebrow>Contact</Eyebrow>
-        <h1 className="mt-5 font-display text-5xl font-medium tracking-tight md:text-6xl">
+        <h1 className="mt-5 font-display text-display-1">
           Let&apos;s build something amazing
         </h1>
         <p className="mt-4 text-lg text-fg-muted">
@@ -40,9 +40,9 @@ export default function ContactPage() {
               href={channel.href}
               target={channel.href.startsWith("http") ? "_blank" : undefined}
               rel={channel.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="flex items-center gap-4 rounded-2xl border border-border bg-bg-elevated p-5 transition-colors hover:border-border-strong"
+              className="glass-surface glow-border flex items-center gap-4 rounded-2xl p-5"
             >
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-primary-foreground [background-image:var(--gradient-signature)]">
                 <channel.icon className="h-5 w-5" strokeWidth={1.75} />
               </span>
               <div>
@@ -51,7 +51,7 @@ export default function ContactPage() {
               </div>
             </a>
           ))}
-          <div className="flex items-center gap-4 rounded-2xl border border-border bg-bg-elevated p-5">
+          <div className="glass-surface flex items-center gap-4 rounded-2xl p-5">
             <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent/15 text-accent">
               <MapPin className="h-5 w-5" strokeWidth={1.75} />
             </span>

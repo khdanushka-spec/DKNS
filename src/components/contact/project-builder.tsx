@@ -58,11 +58,11 @@ export function ProjectBuilder() {
 
   if (status === "done") {
     return (
-      <div className="flex flex-col items-center gap-3 rounded-3xl border border-border bg-bg-elevated p-12 text-center">
+      <div className="glass-surface flex flex-col items-center gap-3 rounded-3xl p-12 text-center">
         <span className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary/15 text-secondary">
           <Check className="h-6 w-6" strokeWidth={2.5} />
         </span>
-        <h3 className="font-display text-2xl font-medium">Your project brief is in.</h3>
+        <h3 className="font-display text-display-3">Your project brief is in.</h3>
         <p className="max-w-sm text-sm text-fg-muted">
           We&apos;ll review what you told us and reply within one business day with next steps.
         </p>
@@ -71,11 +71,14 @@ export function ProjectBuilder() {
   }
 
   return (
-    <div className="rounded-3xl border border-border bg-bg-elevated p-6 md:p-10">
+    <div className="glass-surface rounded-3xl p-6 md:p-10">
       <div className="mb-10 flex items-center gap-2">
         {steps.map((label, i) => (
           <div key={label} className="flex-1">
-            <div className={`h-1 rounded-full transition-colors ${i <= step ? "bg-primary" : "bg-bg-subtle"}`} />
+            <div
+              className="h-1 rounded-full bg-bg-subtle transition-all"
+              style={i <= step ? { backgroundImage: "var(--gradient-signature)" } : undefined}
+            />
             <span className={`mt-2 hidden text-xs sm:block ${i === step ? "text-fg" : "text-fg-faint"}`}>{label}</span>
           </div>
         ))}
@@ -89,7 +92,7 @@ export function ProjectBuilder() {
       >
           {step === 0 && (
             <div>
-              <h3 className="font-display text-2xl font-medium">What are you building?</h3>
+              <h3 className="font-display text-display-3">What are you building?</h3>
               <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
                 {estimatorProjectTypes.map((option) => (
                   <button
@@ -110,7 +113,7 @@ export function ProjectBuilder() {
 
           {step === 1 && (
             <div>
-              <h3 className="font-display text-2xl font-medium">What do you need?</h3>
+              <h3 className="font-display text-display-3">What do you need?</h3>
               <p className="mt-1 text-sm text-fg-faint">Select any that apply — this shapes our first proposal.</p>
               <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
                 {estimatorFeatures.map((option) => {
@@ -144,7 +147,7 @@ export function ProjectBuilder() {
 
           {step === 2 && (
             <div>
-              <h3 className="font-display text-2xl font-medium">Budget &amp; timeline</h3>
+              <h3 className="font-display text-display-3">Budget &amp; timeline</h3>
               <div className="mt-6 space-y-6">
                 <div>
                   <p className="mb-2 text-sm font-medium text-fg">Budget range</p>
@@ -186,7 +189,7 @@ export function ProjectBuilder() {
 
           {step === 3 && (
             <form onSubmit={handleSubmit}>
-              <h3 className="font-display text-2xl font-medium">Your details</h3>
+              <h3 className="font-display text-display-3">Your details</h3>
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 <input
                   required

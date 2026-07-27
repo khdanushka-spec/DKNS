@@ -32,7 +32,7 @@ export default function CareersPage() {
       <Section className="pb-8 pt-20 text-center md:pt-28">
         <Reveal>
           <Eyebrow>Careers</Eyebrow>
-          <h1 className="mx-auto mt-5 max-w-2xl font-display text-5xl font-medium tracking-tight md:text-6xl">
+          <h1 className="mx-auto mt-5 max-w-2xl font-display text-display-1">
             Build your best work here
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-fg-muted">
@@ -44,7 +44,7 @@ export default function CareersPage() {
       <Section className="pt-0">
         <RevealGroup className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           {values.map((value) => (
-            <RevealItem key={value.title} className="rounded-2xl border border-border bg-bg-elevated p-6">
+            <RevealItem key={value.title} className="glass-surface rounded-2xl p-6">
               <h3 className="font-display text-lg font-medium">{value.title}</h3>
               <p className="mt-2 text-sm text-fg-muted">{value.description}</p>
             </RevealItem>
@@ -55,7 +55,7 @@ export default function CareersPage() {
       <Section className="bg-bg-subtle/40">
         <Reveal className="mx-auto max-w-2xl text-center">
           <Eyebrow>Open Roles</Eyebrow>
-          <h2 className="mt-5 font-display text-4xl font-medium tracking-tight md:text-5xl">
+          <h2 className="mt-5 font-display text-display-2">
             Current openings
           </h2>
         </Reveal>
@@ -63,7 +63,7 @@ export default function CareersPage() {
           {openRoles.map((role) => (
             <RevealItem
               key={role.title}
-              className="flex flex-col gap-4 rounded-2xl border border-border bg-bg-elevated p-6 sm:flex-row sm:items-center sm:justify-between"
+              className="flex flex-col gap-4 glass-surface rounded-2xl p-6 sm:flex-row sm:items-center sm:justify-between"
             >
               <div>
                 <h3 className="font-display text-lg font-medium">{role.title}</h3>

@@ -4,15 +4,17 @@ import type { ReactNode } from "react";
 export function GlassCard({
   children,
   className,
+  glow = false,
 }: {
   children: ReactNode;
   className?: string;
+  glow?: boolean;
 }) {
   return (
     <div
       className={cn(
-        "rounded-2xl border border-border bg-bg-elevated/70 backdrop-blur-sm shadow-[0_1px_0_0_rgba(255,255,255,0.04)_inset]",
-        "transition-colors duration-300 hover:border-border-strong",
+        "glass-surface rounded-2xl",
+        glow && "glow-border hover:shadow-[0_0_40px_-12px_var(--color-glow-primary)]",
         className
       )}
     >

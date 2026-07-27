@@ -20,7 +20,7 @@ export default function IndustriesPage() {
       <Section className="pb-8 pt-20 text-center md:pt-28">
         <Reveal>
           <Eyebrow>Industries</Eyebrow>
-          <h1 className="mx-auto mt-5 max-w-2xl font-display text-5xl font-medium tracking-tight md:text-6xl">
+          <h1 className="mx-auto mt-5 max-w-2xl font-display text-display-1">
             Solutions built for your sector
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-fg-muted">
@@ -33,11 +33,11 @@ export default function IndustriesPage() {
         {industries.map((industry) => (
           <Section key={industry.slug} id={industry.slug} className="scroll-mt-24 py-14">
             <Reveal className="grid gap-8 lg:grid-cols-[auto_1fr_auto] lg:items-center">
-              <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/10 text-secondary">
+              <span className="flex h-14 w-14 items-center justify-center rounded-2xl text-primary-foreground [background-image:var(--gradient-signature)]">
                 <Icon name={industry.icon} className="h-6 w-6" />
               </span>
               <div>
-                <h2 className="font-display text-2xl font-medium">{industry.name}</h2>
+                <h2 className="font-display text-display-3">{industry.name}</h2>
                 <p className="mt-2 max-w-xl text-fg-muted">{industry.description}</p>
                 <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
                   {industry.solutions.map((solution) => (

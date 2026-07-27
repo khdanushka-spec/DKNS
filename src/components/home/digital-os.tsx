@@ -16,7 +16,7 @@ export function DigitalOS() {
     <Section id="digital-os" className="bg-bg-subtle/40">
       <Reveal className="mx-auto max-w-2xl text-center">
         <Eyebrow>Digital Operating System</Eyebrow>
-        <h2 className="mt-5 font-display text-4xl font-medium tracking-tight md:text-5xl">
+        <h2 className="mt-5 font-display text-display-2">
           One system. Every part connected.
         </h2>
         <p className="mt-4 text-lg text-fg-muted">
@@ -24,7 +24,7 @@ export function DigitalOS() {
         </p>
       </Reveal>
 
-      <Reveal delay={0.1} className="relative mt-14 h-[420px] overflow-hidden rounded-3xl border border-border bg-bg-elevated md:h-[520px]">
+      <Reveal delay={0.1} className="glass-surface relative mt-14 h-[420px] overflow-hidden rounded-3xl md:h-[520px]">
         <EcosystemCanvas
           nodes={ecosystemNodes}
           edges={ecosystemEdges}
@@ -41,9 +41,9 @@ export function DigitalOS() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
-              className="pointer-events-auto max-w-md rounded-2xl border border-border bg-bg-elevated/95 p-5 text-center shadow-xl backdrop-blur"
+              className="glass-surface pointer-events-auto max-w-md rounded-2xl p-5 text-center"
             >
-              <h3 className="font-display text-lg font-medium text-primary">{selectedNode.label}</h3>
+              <h3 className="font-display text-display-3 text-primary">{selectedNode.label}</h3>
               <p className="mt-1.5 text-sm text-fg-muted">{selectedNode.description}</p>
             </motion.div>
           )}

@@ -6,12 +6,12 @@ import { NewsletterForm } from "./newsletter-form";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-bg-subtle/40">
+    <footer className="gradient-mesh relative border-t border-border bg-bg-subtle/40">
       <Container className="py-16">
         <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr_1fr_1fr_1.2fr]">
           <div>
             <Link href="/" className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground text-sm">
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg text-primary-foreground text-sm [background-image:var(--gradient-signature)]">
                 D
               </span>
               {site.name}

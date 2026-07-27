@@ -20,7 +20,7 @@ export default function PricingPage() {
       <Section className="pb-8 pt-20 text-center md:pt-28">
         <Reveal>
           <Eyebrow>Pricing</Eyebrow>
-          <h1 className="mx-auto mt-5 max-w-2xl font-display text-5xl font-medium tracking-tight md:text-6xl">
+          <h1 className="mx-auto mt-5 max-w-2xl font-display text-display-1">
             Investment that scales with your ambition
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-fg-muted">
@@ -34,13 +34,13 @@ export default function PricingPage() {
           {pricingTiers.map((tier) => (
             <RevealItem key={tier.name}>
               <div
-                className={`flex h-full flex-col rounded-2xl border p-8 ${
-                  tier.highlighted ? "border-primary bg-primary/5" : "border-border bg-bg-elevated"
+                className={`glass-surface flex h-full flex-col rounded-2xl p-8 ${
+                  tier.highlighted ? "glow-border border-primary/40" : ""
                 }`}
               >
-                <h2 className="font-display text-2xl font-medium">{tier.name}</h2>
+                <h2 className="font-display text-display-3">{tier.name}</h2>
                 <p className="mt-2 text-sm text-fg-muted">{tier.description}</p>
-                <div className="mt-6 font-display text-3xl font-medium">{tier.price}</div>
+                <div className="mt-6 font-display text-3xl">{tier.price}</div>
                 <div className="text-xs text-fg-faint">{tier.cadence}</div>
                 <ul className="mt-6 flex-1 space-y-3">
                   {tier.features.map((feature) => (
@@ -67,7 +67,7 @@ export default function PricingPage() {
       <Section className="bg-bg-subtle/40">
         <Reveal className="mx-auto max-w-2xl text-center">
           <Eyebrow>Project Estimator</Eyebrow>
-          <h2 className="mt-5 font-display text-4xl font-medium tracking-tight md:text-5xl">
+          <h2 className="mt-5 font-display text-display-2">
             Get a ballpark in 30 seconds
           </h2>
         </Reveal>

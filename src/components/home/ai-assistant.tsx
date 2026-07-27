@@ -67,7 +67,7 @@ export function AiAssistant() {
           <Sparkles className="h-3.5 w-3.5" strokeWidth={2} />
           Ask DKNS
         </Eyebrow>
-        <h2 className="mt-5 font-display text-4xl font-medium tracking-tight md:text-5xl">
+        <h2 className="mt-5 font-display text-display-2">
           Instant answers, before the first call
         </h2>
         <p className="mt-4 text-lg text-fg-muted">
@@ -75,9 +75,9 @@ export function AiAssistant() {
         </p>
       </Reveal>
 
-      <Reveal delay={0.1} className="mx-auto mt-14 max-w-2xl overflow-hidden rounded-3xl border border-border bg-bg-elevated">
+      <Reveal delay={0.1} className="glass-surface mx-auto mt-14 max-w-2xl overflow-hidden rounded-3xl">
         <div className="flex items-center gap-2 border-b border-border px-6 py-4">
-          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary">
+          <span className="flex h-8 w-8 items-center justify-center rounded-full text-primary-foreground [background-image:var(--gradient-signature)]">
             <Sparkles className="h-4 w-4" strokeWidth={2} />
           </span>
           <span className="text-sm font-medium">Ask DKNS</span>

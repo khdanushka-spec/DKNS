@@ -20,7 +20,7 @@ export default function ServicesPage() {
       <Section className="pb-8 pt-20 text-center md:pt-28">
         <Reveal>
           <Eyebrow>What We Do</Eyebrow>
-          <h1 className="mx-auto mt-5 max-w-2xl font-display text-5xl font-medium tracking-tight md:text-6xl">
+          <h1 className="mx-auto mt-5 max-w-2xl font-display text-display-1">
             Every capability your business needs
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-fg-muted">
@@ -35,17 +35,17 @@ export default function ServicesPage() {
           <Section key={service.slug} id={service.slug} className="scroll-mt-24 py-16 md:py-20">
             <Reveal className={`grid gap-10 lg:grid-cols-2 lg:items-center ${i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}>
               <div>
-                <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                <span className="flex h-14 w-14 items-center justify-center rounded-2xl text-primary-foreground [background-image:var(--gradient-signature)]">
                   <Icon name={service.icon} className="h-6 w-6" />
                 </span>
-                <h2 className="mt-6 font-display text-3xl font-medium tracking-tight md:text-4xl">{service.name}</h2>
+                <h2 className="mt-6 font-display text-display-2">{service.name}</h2>
                 <p className="mt-4 text-lg text-fg-muted">{service.description}</p>
                 <Button href="/contact" className="mt-7">
                   Start Your Project
                   <ArrowUpRight className="h-4 w-4" strokeWidth={1.75} />
                 </Button>
               </div>
-              <div className="rounded-2xl border border-border bg-bg-elevated p-8">
+              <div className="glass-surface glow-border rounded-2xl p-8">
                 <h3 className="text-sm font-medium uppercase tracking-wide text-fg-faint">Key Benefits</h3>
                 <ul className="mt-5 space-y-4">
                   {service.benefits.map((benefit) => (

@@ -72,8 +72,8 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
             <ArrowLeft className="h-4 w-4" strokeWidth={2} />
             Back to Portfolio
           </Link>
-          <Badge className="w-fit bg-white/15 text-white backdrop-blur">{project.industry}</Badge>
-          <h1 className="mt-4 max-w-3xl font-display text-4xl font-medium text-white md:text-6xl">{project.name}</h1>
+          <Badge variant="overlay" className="w-fit">{project.industry}</Badge>
+          <h1 className="mt-4 max-w-3xl font-display text-display-1 text-white">{project.name}</h1>
         </div>
       </div>
 
@@ -103,7 +103,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
 
             {project.testimonial && (
               <Reveal>
-                <GlassCard className="p-7">
+                <GlassCard glow className="p-7">
                   <div className="flex gap-1 text-accent">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <Star key={i} className="h-4 w-4" fill="currentColor" strokeWidth={0} />
@@ -119,7 +119,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
           </div>
 
           <div className="space-y-8">
-            <Reveal className="rounded-2xl border border-border bg-bg-elevated p-6">
+            <Reveal className="glass-surface rounded-2xl p-6">
               <h3 className="text-sm font-medium uppercase tracking-wide text-fg-faint">Results</h3>
               <div className="mt-5 space-y-4">
                 {project.results.map((result) => (
@@ -131,7 +131,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
               </div>
             </Reveal>
 
-            <Reveal className="rounded-2xl border border-border bg-bg-elevated p-6">
+            <Reveal className="glass-surface rounded-2xl p-6">
               <h3 className="text-sm font-medium uppercase tracking-wide text-fg-faint">Technology</h3>
               <div className="mt-4 flex flex-wrap gap-2">
                 {project.technology.map((tech) => (
@@ -140,7 +140,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
               </div>
             </Reveal>
 
-            <Reveal className="rounded-2xl border border-border bg-bg-elevated p-6">
+            <Reveal className="glass-surface rounded-2xl p-6">
               <h3 className="text-sm font-medium uppercase tracking-wide text-fg-faint">Client</h3>
               <p className="mt-3 text-sm text-fg-muted">{project.client}</p>
               <p className="mt-1 text-sm text-fg-muted">{project.year}</p>
@@ -168,7 +168,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
         <div className="grid gap-16 lg:grid-cols-2">
           <Reveal>
             <Eyebrow>Architecture</Eyebrow>
-            <h2 className="mt-5 font-display text-2xl font-medium">How it&apos;s built</h2>
+            <h2 className="mt-5 font-display text-display-3">How it&apos;s built</h2>
             <div className="mt-8">
               <ArchitectureDiagram />
             </div>
@@ -176,7 +176,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
 
           <Reveal delay={0.1}>
             <Eyebrow>Performance</Eyebrow>
-            <h2 className="mt-5 font-display text-2xl font-medium">Lighthouse scores</h2>
+            <h2 className="mt-5 font-display text-display-3">Lighthouse scores</h2>
             <p className="mt-1 text-sm text-fg-faint">Illustrative — representative of our typical delivery standard.</p>
             <div className="mt-8 grid grid-cols-2 gap-6">
               {lighthouseScores.map((item) => (
@@ -194,11 +194,11 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
             <RevealItem key={p.slug}>
               <Link
                 href={`/portfolio/${p.slug}`}
-                className="group flex items-center justify-between rounded-2xl border border-border bg-bg-elevated p-6 transition-colors hover:border-border-strong"
+                className="glass-surface glow-border group flex items-center justify-between rounded-2xl p-6"
               >
                 <div>
                   <div className="text-xs text-fg-faint">{p.industry}</div>
-                  <div className="mt-1 font-display text-lg font-medium">{p.name}</div>
+                  <div className="mt-1 font-display text-lg">{p.name}</div>
                 </div>
                 <ArrowUpRight className="h-5 w-5 text-fg-faint transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-primary" strokeWidth={1.75} />
               </Link>

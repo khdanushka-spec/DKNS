@@ -6,7 +6,7 @@ import type { ReactNode } from "react";
 export function Reveal({
   children,
   delay = 0,
-  y = 24,
+  y = 16,
   className,
   once = true,
 }: {
@@ -32,7 +32,7 @@ export function Reveal({
 export function RevealGroup({
   children,
   className,
-  stagger = 0.08,
+  stagger = 0.06,
 }: {
   children: ReactNode;
   className?: string;
@@ -55,7 +55,7 @@ export function RevealGroup({
 }
 
 export const revealItemVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 16 },
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const } },
 };
 

@@ -20,7 +20,7 @@ export default function BlogPage() {
       <Section className="pb-8 pt-20 text-center md:pt-28">
         <Reveal>
           <Eyebrow>Blog</Eyebrow>
-          <h1 className="mx-auto mt-5 max-w-2xl font-display text-5xl font-medium tracking-tight md:text-6xl">
+          <h1 className="mx-auto mt-5 max-w-2xl font-display text-display-1">
             Ideas on AI, web, and growth
           </h1>
         </Reveal>
@@ -28,11 +28,11 @@ export default function BlogPage() {
 
       <Section className="pt-0">
         <RevealGroup className="grid grid-cols-1 gap-5 md:grid-cols-3">
-          {posts.map((post) => (
-            <RevealItem key={post.slug}>
+          {posts.map((post, i) => (
+            <RevealItem key={post.slug} className={i === 0 ? "md:col-span-2" : undefined}>
               <Link
                 href={`/blog/${post.slug}`}
-                className="group flex h-full flex-col rounded-2xl border border-border bg-bg-elevated p-6 transition-colors hover:border-border-strong"
+                className="glass-surface glow-border group flex h-full flex-col rounded-2xl p-6"
               >
                 <Badge>{post.category}</Badge>
                 <h2 className="mt-4 font-display text-lg font-medium leading-snug">{post.title}</h2>

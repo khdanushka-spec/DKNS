@@ -19,7 +19,7 @@ export default function ResourcesPage() {
       <Section className="pb-8 pt-20 text-center md:pt-28">
         <Reveal>
           <Eyebrow>Free Resources</Eyebrow>
-          <h1 className="mx-auto mt-5 max-w-2xl font-display text-5xl font-medium tracking-tight md:text-6xl">
+          <h1 className="mx-auto mt-5 max-w-2xl font-display text-display-1">
             Guides worth stealing
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-fg-muted">
@@ -32,8 +32,8 @@ export default function ResourcesPage() {
         <RevealGroup className="grid grid-cols-1 gap-5 sm:grid-cols-2">
           {resources.map((resource) => (
             <RevealItem key={resource.slug} id={resource.slug} className="scroll-mt-24">
-              <div className="flex items-start gap-4 rounded-2xl border border-border bg-bg-elevated p-6">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent/15 text-accent">
+              <div className="glass-surface glow-border flex items-start gap-4 rounded-2xl p-6">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-primary-foreground [background-image:var(--gradient-signature)]">
                   <Download className="h-5 w-5" strokeWidth={1.75} />
                 </span>
                 <div className="flex-1">

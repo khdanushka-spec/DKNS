@@ -19,7 +19,7 @@ export function InteractivePortfolio() {
       <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
         <Reveal>
           <Eyebrow>Interactive Portfolio</Eyebrow>
-          <h2 className="mt-5 font-display text-4xl font-medium tracking-tight md:text-5xl">
+          <h2 className="mt-5 font-display text-display-2">
             Explore the products, not screenshots
           </h2>
         </Reveal>
@@ -31,31 +31,31 @@ export function InteractivePortfolio() {
         </Reveal>
       </div>
 
-      <RevealGroup className="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-2">
-        {featured.map((project) => (
-          <RevealItem key={project.slug}>
+      <RevealGroup className="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-3">
+        {featured.map((project, i) => (
+          <RevealItem key={project.slug} className={i === 0 ? "lg:col-span-2" : undefined}>
             <Link
               href={`/portfolio/${project.slug}`}
               onMouseEnter={() => setHoveredSlug(project.slug)}
               onMouseLeave={() => setHoveredSlug(null)}
-              className="group block overflow-hidden rounded-2xl border border-border bg-bg-elevated transition-colors hover:border-border-strong"
+              className="glass-surface glow-border group block h-full overflow-hidden rounded-2xl"
             >
               <div className="relative h-56 p-3">
                 <DeviceMockup gradient={project.coverGradient} hovered={hoveredSlug === project.slug} />
-                <Badge className="absolute left-6 top-6 bg-white/15 text-white backdrop-blur">
+                <Badge variant="overlay" className="absolute left-6 top-6">
                   {project.industry}
                 </Badge>
               </div>
               <div className="p-6">
                 <div className="flex items-start justify-between gap-3">
-                  <h3 className="font-display text-xl font-medium">{project.name}</h3>
+                  <h3 className="font-display text-display-3">{project.name}</h3>
                   <ArrowUpRight className="h-4.5 w-4.5 shrink-0 text-fg-faint transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-primary" strokeWidth={1.75} />
                 </div>
                 <p className="mt-2 text-sm text-fg-muted">{project.summary}</p>
                 <div className="mt-5 grid grid-cols-3 gap-4 border-t border-border pt-5">
                   {project.results.slice(0, 3).map((result) => (
                     <div key={result.label}>
-                      <div className="font-display text-lg font-medium text-primary">{result.value}</div>
+                      <div className="font-display text-lg font-semibold text-primary">{result.value}</div>
                       <div className="mt-0.5 text-xs text-fg-faint">{result.label}</div>
                     </div>
                   ))}

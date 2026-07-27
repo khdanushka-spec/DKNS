@@ -13,7 +13,7 @@ export function KnowledgeCenter() {
       <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
         <Reveal>
           <Eyebrow>Knowledge Center</Eyebrow>
-          <h2 className="mt-5 font-display text-4xl font-medium tracking-tight md:text-5xl">
+          <h2 className="mt-5 font-display text-display-2">
             Insights, research, and resources
           </h2>
         </Reveal>
@@ -26,11 +26,11 @@ export function KnowledgeCenter() {
       </div>
 
       <RevealGroup className="mt-14 grid grid-cols-1 gap-5 md:grid-cols-3">
-        {posts.map((post) => (
-          <RevealItem key={post.slug}>
+        {posts.map((post, i) => (
+          <RevealItem key={post.slug} className={i === 0 ? "md:col-span-2" : undefined}>
             <Link
               href={`/blog/${post.slug}`}
-              className="group flex h-full flex-col rounded-2xl border border-border bg-bg-elevated p-6 transition-colors hover:border-border-strong"
+              className="glass-surface glow-border group flex h-full flex-col rounded-2xl p-6"
             >
               <Badge>{post.category}</Badge>
               <h3 className="mt-4 font-display text-lg font-medium leading-snug">{post.title}</h3>
@@ -44,7 +44,7 @@ export function KnowledgeCenter() {
         ))}
       </RevealGroup>
 
-      <Reveal delay={0.1} className="mt-14 rounded-2xl border border-border bg-bg-elevated p-6 md:p-8">
+      <Reveal delay={0.1} className="glass-surface mt-14 rounded-2xl p-6 md:p-8">
         <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
           <h3 className="font-display text-lg font-medium">Free guides &amp; templates</h3>
           <Button href="/resources" variant="secondary" size="md">

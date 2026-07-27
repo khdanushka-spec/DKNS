@@ -7,7 +7,7 @@ export function Process() {
     <Section id="process">
       <Reveal className="mx-auto max-w-2xl text-center">
         <Eyebrow>Engineering Process</Eyebrow>
-        <h2 className="mt-5 font-display text-4xl font-medium tracking-tight md:text-5xl">
+        <h2 className="mt-5 font-display text-display-2">
           Precision, at every stage
         </h2>
       </Reveal>
@@ -21,7 +21,7 @@ export function Process() {
                 <span className="relative z-10 h-2.5 w-2.5 rounded-full bg-primary" />
               </div>
               <span className="mt-4 block font-display text-xs text-fg-faint">{step.step}</span>
-              <h3 className="mt-1.5 font-display text-lg font-medium">{step.title}</h3>
+              <h3 className="mt-1.5 font-display text-lg font-semibold">{step.title}</h3>
               <p className="mt-2 text-sm text-fg-muted">{step.description}</p>
             </RevealItem>
           ))}

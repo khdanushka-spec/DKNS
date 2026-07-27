@@ -7,7 +7,7 @@ export function ContactTeaser() {
   return (
     <Section id="contact-teaser" className="bg-ivory text-ivory-foreground">
       <Reveal className="mx-auto max-w-2xl text-center">
-        <h2 className="font-display text-4xl font-medium tracking-tight md:text-6xl">
+        <h2 className="font-display text-display-2">
           Ready to engineer your next chapter?
         </h2>
         <p className="mx-auto mt-4 max-w-lg text-lg opacity-70">

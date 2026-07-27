@@ -2,19 +2,29 @@ import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 import { Container } from "./container";
 
+type SectionSize = "sm" | "md" | "lg";
+
+const sizeClasses: Record<SectionSize, string> = {
+  sm: "py-14 md:py-20",
+  md: "py-20 md:py-28",
+  lg: "py-28 md:py-36",
+};
+
 export function Section({
   children,
   className,
   containerClassName,
   id,
+  size = "md",
 }: {
   children: ReactNode;
   className?: string;
   containerClassName?: string;
   id?: string;
+  size?: SectionSize;
 }) {
   return (
-    <section id={id} className={cn("py-20 md:py-28", className)}>
+    <section id={id} className={cn(sizeClasses[size], className)}>
       <Container className={containerClassName}>{children}</Container>
     </section>
   );

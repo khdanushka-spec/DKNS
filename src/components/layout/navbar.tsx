@@ -14,11 +14,11 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-bg/80 backdrop-blur-md">
+    <header className="glass-surface sticky top-0 z-50 rounded-none border-x-0 border-t-0">
       <Container className="flex h-18 items-center justify-between py-4">
         <Link href="/" className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight">
           <span
-            className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground text-sm"
+            className="flex h-8 w-8 items-center justify-center rounded-lg text-primary-foreground text-sm [background-image:var(--gradient-signature)]"
             aria-hidden="true"
           >
             D
@@ -47,7 +47,7 @@ export function Navbar() {
                     transition={{ duration: 0.15 }}
                     className="absolute left-1/2 top-full w-80 -translate-x-1/2 pt-3"
                   >
-                    <div className="rounded-2xl border border-border bg-bg-elevated p-2 shadow-xl">
+                    <div className="glass-surface rounded-2xl p-2">
                       {group.items.map((item) => (
                         <Link
                           key={item.href}
@@ -70,7 +70,7 @@ export function Navbar() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <ThemeToggle />
-          <Button href="/contact" size="md">
+          <Button href="/contact" variant="gradient" size="md">
             Start Your Project
             <ArrowUpRight className="h-4 w-4" strokeWidth={1.75} />
           </Button>
@@ -108,7 +108,7 @@ export function Navbar() {
                   {item.label}
                 </Link>
               ))}
-              <Button href="/contact" size="md" className="mt-2 w-full justify-center">
+              <Button href="/contact" variant="gradient" size="md" className="mt-2 w-full justify-center">
                 Start Your Project
               </Button>
             </Container>
