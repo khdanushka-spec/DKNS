@@ -11,10 +11,10 @@ export const site = {
   url: "https://dkns.ai",
   founder: "Dhanushka Kariyawasam",
   email: "hello@dkns.ai",
-  phone: "+61 400 000 000",
-  whatsapp: "https://wa.me/61400000000",
+  phone: "+61 433 517 390",
+  whatsapp: "https://wa.me/61433517390",
   calendar: "https://cal.com/dkns-digital/consultation",
-  address: "Melbourne, Victoria, Australia",
+  address: "Brisbane, Queensland, Australia",
   social: {
     linkedin: "https://www.linkedin.com/company/dkns-digital",
     instagram: "https://www.instagram.com/dkns.digital",

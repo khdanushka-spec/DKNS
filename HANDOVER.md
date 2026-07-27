@@ -100,6 +100,61 @@ builder were each re-tested end-to-end after the fix). If you add another
 `AnimatePresence mode="wait"` with a changing `key` elsewhere, test it the
 same way before trusting it.
 
+## Deployment status (as of 2026-07-28)
+
+**GitHub: done.** Code is pushed to `github.com/khdanushka-spec/DKNS` on `main`
+(local git identity for this repo is set to `Dhanu` /
+`dhanu-af@users.noreply.github.com`, matching the convention used in her other
+DKNS repos). This is the source of truth to deploy from — don't recreate it.
+
+**Vercel: fixed.** She deleted the broken `dkns` project and re-imported
+`khdanushka-spec/DKNS` fresh with default Next.js settings herself (Vercel
+Hobby plan, account "Dhanushka"), as planned below. Verified from this session
+by browsing `dkns.vercel.app` directly — it now correctly serves the DKNS
+Digital agency site (hero, nav, "We Engineer Digital Businesses."), not the
+old `404: NOT_FOUND`.
+
+**`dkns.ai` custom domain: NOT yet repointed — still serving the wrong site.**
+Browsing `https://dkns.ai` in this session (2026-07-28) returns a completely
+different, unrelated site: a personal résumé/career page for "Dhanushka
+Kariyawasam — Entrepreneur & Operations Professional" (DKNS Marketing tea/
+cinnamon export business, South Scooters, Senkadagala Finance career history,
+etc.) — not the agency site, and not a 404. This means `dkns.ai` is either
+still attached to a different old Vercel project/deployment, or its DNS
+hasn't been added to the new `dkns` project yet. **Do not report `dkns.ai` as
+live until this is checked in her Vercel dashboard** — the fix that worked for
+`dkns.vercel.app` (recreating the project) does not by itself move a custom
+domain over; domains have to be explicitly added to the new project in
+Settings → Domains, and any old project still claiming `dkns.ai` needs the
+domain removed from it first.
+
+**Important access limitation for future sessions:** the Vercel MCP
+integration available in this environment is authenticated as a **different
+Vercel identity** than her real account — a team called "DKNS" (slug `dkns1`)
+that does not appear anywhere in her actual dashboard (confirmed: her team
+switcher only shows "Dhanushka / Hobby"). Every lookup against her real `dkns`
+project (`get_project`, `get_deployment`, `get_deployment_build_logs`, by
+project ID, by hostname, with every team ID variant) returns 404/not found.
+There is no tool available in this environment to create a Vercel project
+with a linked git repository either — the only creation tool
+(`deploy_to_vercel`) is a raw file-upload API that explicitly bypasses git,
+and even that would land in the wrong (inaccessible-to-her) "DKNS" team, not
+her Hobby account. **Do not attempt to fix or redeploy her `dkns` project via
+the Vercel MCP tools — they cannot reach it, no matter how the calls are
+shaped.** The only ways to actually act on her real account are (a) her doing
+it herself in the dashboard, or (b) she connects the "Claude in Chrome"
+browser extension so a session can drive her real, logged-in browser
+directly — checked via `list_connected_browsers`, currently empty (not
+connected as of this writing).
+
+**Next step (her call):** in the Vercel dashboard, check whatever project
+currently owns the `dkns.ai` domain (likely the old personal-site project or
+a leftover claim on the deleted `dkns` project), remove the domain from it,
+then add `dkns.ai` to the new `dkns` project's Settings → Domains. Once she
+says it's done, re-verify by browsing `dkns.ai` from here — a plain
+fetch/browse of the public URL doesn't need her login, only *changing*
+settings does.
+
 ## Phase 2 — still not built, by design
 
 Unchanged from Phase 1 — needs her accounts/credentials or infra decisions:
