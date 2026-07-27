@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, Mail, Phone, MapPin } from "lucide-react";
 import { LinkedInIcon, InstagramIcon, GitHubIcon, XIcon } from "@/components/ui/social-icons";
 import { Container } from "@/components/ui/container";
@@ -36,9 +37,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr_1fr_1fr_1.3fr]">
           <div>
             <Link href="/" className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg text-primary-foreground text-sm [background-image:var(--gradient-signature)]">
-                D
-              </span>
+              <Image src="/logo.png" alt="" width={32} height={32} className="h-8 w-8 rounded-lg object-cover" />
               {site.name}
             </Link>
             <p className="mt-4 max-w-xs text-sm text-fg-muted">{site.tagline}</p>

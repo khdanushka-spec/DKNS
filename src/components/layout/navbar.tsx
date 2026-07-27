@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -64,12 +65,7 @@ export function Navbar() {
     >
       <Container className="flex h-18 items-center justify-between py-4">
         <Link href="/" className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight">
-          <span
-            className="flex h-8 w-8 items-center justify-center rounded-lg text-primary-foreground text-sm [background-image:var(--gradient-signature)]"
-            aria-hidden="true"
-          >
-            D
-          </span>
+          <Image src="/logo.png" alt="" width={32} height={32} className="h-8 w-8 rounded-lg object-cover" aria-hidden="true" />
           {site.name}
         </Link>
 
