@@ -1,0 +1,201 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  color-scheme: light;
+
+  /* Soft White (light background) */
+  --bg: #faf8f3;
+  --bg-elevated: #ffffff;
+  --bg-subtle: #f1efe6;
+
+  /* Deep, near-black text with a forest tint */
+  --fg: #10231c;
+  --fg-muted: #4a564f;
+  --fg-faint: #7c877f;
+
+  --border: rgba(16, 35, 28, 0.1);
+  --border-strong: rgba(16, 35, 28, 0.18);
+
+  /* Deep Forest Green */
+  --primary: #0c3d2b;
+  --primary-foreground: #faf8f3;
+
+  /* Emerald */
+  --secondary: #0f9d63;
+  --secondary-foreground: #faf8f3;
+
+  /* Soft Gold — used sparingly, single accent moments only */
+  --accent: #b89257;
+  --accent-foreground: #10231c;
+
+  --success: #0f9d63;
+  --danger: #b3452f;
+}
+
+.dark {
+  color-scheme: dark;
+
+  /* Almost Black */
+  --bg: #08090a;
+  --bg-elevated: #111413;
+  --bg-subtle: #161a18;
+
+  /* Warm White text */
+  --fg: #f6f4ec;
+  --fg-muted: #a8b2ac;
+  --fg-faint: #707a75;
+
+  --border: rgba(246, 244, 236, 0.1);
+  --border-strong: rgba(246, 244, 236, 0.18);
+
+  /* Emerald reads better than deep forest on near-black */
+  --primary: #34d399;
+  --primary-foreground: #06120d;
+
+  --secondary: #22c58f;
+  --secondary-foreground: #06120d;
+
+  /* Lighter soft gold for dark contrast */
+  --accent: #d3b57e;
+  --accent-foreground: #10231c;
+
+  --success: #34d399;
+  --danger: #e2836b;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-bg-subtle: var(--bg-subtle);
+
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-faint: var(--fg-faint);
+
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+
+  /* Fixed editorial tones — same value in both themes, used for deliberate
+     high-contrast "printed page" moments (Command Center, Knowledge Center) */
+  --color-ivory: #f3ede0;
+  --color-ivory-foreground: #171a16;
+  --color-charcoal: #15171a;
+  --color-charcoal-foreground: #f3ede0;
+
+  --font-sans: var(--font-body);
+  --font-display: var(--font-heading);
+
+  --container-content: 1280px;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  overscroll-behavior-y: none;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+
+.font-display {
+  font-family: var(--font-heading), ui-serif, serif;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+/* Custom cursor — desktop pointer devices only, applied via JS after
+   detecting a fine pointer, so touch devices keep the native cursor */
+html.has-custom-cursor,
+html.has-custom-cursor * {
+  cursor: none !important;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee-scroll 32s linear infinite;
+}
+
+.gradient-mesh {
+  background-image:
+    radial-gradient(40% 40% at 15% 20%, color-mix(in oklab, var(--secondary) 30%, transparent) 0%, transparent 70%),
+    radial-gradient(35% 35% at 85% 15%, color-mix(in oklab, var(--accent) 25%, transparent) 0%, transparent 70%),
+    radial-gradient(50% 50% at 50% 100%, color-mix(in oklab, var(--primary) 35%, transparent) 0%, transparent 70%);
+}
+
+/* Subtle film-grain texture for tactility on dark/editorial sections */
+.noise-overlay {
+  position: relative;
+  isolation: isolate;
+}
+
+.noise-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html.has-custom-cursor,
+  html.has-custom-cursor * {
+    cursor: auto !important;
+  }
+}
