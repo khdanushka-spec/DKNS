@@ -6,9 +6,14 @@ export type TeamMember = {
 
 export const team: TeamMember[] = [
   {
-    name: "Dhanushka Kariyawasam",
+    name: "Sharab Ahmad",
     role: "Founder & Principal Engineer",
     bio: "Leads strategy and engineering across every DKNS Digital engagement — from discovery through launch and long-term support.",
+  },
+  {
+    name: "Dhanushka Kariyawasam",
+    role: "Founder & Developer",
+    bio: "Builds and ships the products behind every DKNS Digital engagement, from first prototype to production.",
   },
 ];
 

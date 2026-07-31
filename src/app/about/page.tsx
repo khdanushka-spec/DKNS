@@ -59,7 +59,7 @@ export default function AboutPage() {
           <Eyebrow>The Team</Eyebrow>
           <h2 className="mt-5 font-display text-display-2">Who you&apos;ll work with</h2>
         </Reveal>
-        <RevealGroup className="mt-14 flex justify-center">
+        <RevealGroup className="mt-14 flex flex-wrap justify-center gap-6">
           {team.map((member) => (
             <RevealItem key={member.name} className="max-w-sm glass-surface rounded-2xl p-8 text-center">
               <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 font-display text-2xl font-medium text-primary">
