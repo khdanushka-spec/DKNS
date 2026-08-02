@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Section, Eyebrow } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { EcosystemCanvas } from "@/components/hero/ecosystem-canvas";
+import { AmbientGlow } from "@/components/ui/ambient-glow";
 import { ecosystemNodes, ecosystemEdges } from "@/content/ecosystem";
 import { cn } from "@/lib/utils";
 
@@ -25,11 +26,7 @@ export function DigitalOS() {
       </Reveal>
 
       <div className="relative mt-14">
-        <div
-          className="pointer-events-none absolute inset-0 -z-10 blur-[100px]"
-          style={{ background: "radial-gradient(circle, var(--glow-primary) 0%, transparent 70%)" }}
-          aria-hidden="true"
-        />
+        <AmbientGlow className="inset-0 -z-10" />
         <Reveal delay={0.1} className="glass-surface glow-border relative h-[420px] overflow-hidden rounded-3xl md:h-[520px]">
           <EcosystemCanvas
             nodes={ecosystemNodes}

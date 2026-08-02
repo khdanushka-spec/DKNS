@@ -9,6 +9,7 @@ import { RevealGroup, RevealItem } from "@/components/ui/reveal";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
 import { EcosystemCanvas } from "@/components/hero/ecosystem-canvas";
 import { AmbientParticles } from "@/components/hero/ambient-particles";
+import { AmbientGlow } from "@/components/ui/ambient-glow";
 import { ecosystemNodes, ecosystemEdges } from "@/content/ecosystem";
 import { heroStats } from "@/content/stats";
 
@@ -29,11 +30,7 @@ export function Hero() {
 
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-bg/40 via-bg/70 to-bg" />
 
-      <div
-        className="pointer-events-none absolute left-1/2 top-[40%] h-[520px] w-[820px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[120px]"
-        style={{ background: "radial-gradient(circle, var(--glow-primary) 0%, transparent 70%)" }}
-        aria-hidden="true"
-      />
+      <AmbientGlow className="left-1/2 top-[40%] h-[520px] w-[820px] -translate-x-1/2 -translate-y-1/2" />
 
       <Container className="relative z-10 flex flex-1 flex-col items-center justify-center text-center">
         <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>

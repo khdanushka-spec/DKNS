@@ -10,6 +10,7 @@ import { services } from "@/content/services";
 import { pricingTiers } from "@/content/pricing";
 import { processSteps } from "@/content/process";
 import { techStack } from "@/content/tech";
+import { AmbientGlow } from "@/components/ui/ambient-glow";
 
 type Prompt = {
   id: string;
@@ -76,11 +77,7 @@ export function AiAssistant() {
       </Reveal>
 
       <div className="relative mx-auto mt-14 max-w-2xl">
-        <div
-          className="pointer-events-none absolute inset-0 -z-10 blur-[100px]"
-          style={{ background: "radial-gradient(circle, var(--glow-secondary) 0%, transparent 70%)" }}
-          aria-hidden="true"
-        />
+        <AmbientGlow color="var(--glow-secondary)" className="inset-0 -z-10" />
         <Reveal delay={0.1} className="glass-surface glow-border relative overflow-hidden rounded-3xl">
         <div className="flex items-center gap-2 border-b border-border px-6 py-4">
           <span className="flex h-8 w-8 items-center justify-center rounded-full text-primary-foreground [background-image:var(--gradient-signature)]">

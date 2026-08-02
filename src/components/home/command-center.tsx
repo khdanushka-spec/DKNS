@@ -9,6 +9,7 @@ import { AnimatedCounter } from "@/components/ui/animated-counter";
 import { Sparkline } from "@/components/ui/sparkline";
 import { ScoreRing } from "@/components/ui/score-ring";
 import { commandMetrics, aiActivityFeed, performanceScore } from "@/content/command-center";
+import { AmbientGlow } from "@/components/ui/ambient-glow";
 import { techStack } from "@/content/tech";
 
 export function CommandCenter() {
@@ -35,11 +36,7 @@ export function CommandCenter() {
 
       <div className="mt-16 grid gap-6 lg:grid-cols-[auto_1fr]">
         <div className="relative">
-          <div
-            className="pointer-events-none absolute inset-0 -z-10 blur-[80px]"
-            style={{ background: "radial-gradient(circle, var(--glow-secondary) 0%, transparent 70%)" }}
-            aria-hidden="true"
-          />
+          <AmbientGlow color="var(--glow-secondary)" className="inset-0 -z-10" />
           <Reveal className="relative flex h-full flex-col items-center justify-center rounded-3xl border border-charcoal-foreground/10 bg-charcoal-foreground/5 p-8 backdrop-blur-sm transition-shadow hover:shadow-[0_0_40px_-10px_var(--color-glow-secondary)]">
             <ScoreRing score={performanceScore} label="Avg. Lighthouse Score" />
           </Reveal>
