@@ -67,6 +67,15 @@ export function Hero() {
           designed as one intelligent ecosystem, not separate projects.
         </motion.p>
 
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.78 }}
+          className="mt-5 text-sm font-semibold uppercase tracking-[0.2em] [background-image:var(--gradient-signature)] bg-clip-text text-transparent"
+        >
+          Every problem has a solution — we&apos;re here to solve them all.
+        </motion.p>
+
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
