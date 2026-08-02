@@ -34,15 +34,22 @@ export function CommandCenter() {
       </Reveal>
 
       <div className="mt-16 grid gap-6 lg:grid-cols-[auto_1fr]">
-        <Reveal className="flex flex-col items-center justify-center rounded-3xl border border-charcoal-foreground/10 bg-charcoal-foreground/5 p-8 backdrop-blur-sm transition-shadow hover:shadow-[0_0_40px_-10px_var(--color-glow-secondary)]">
-          <ScoreRing score={performanceScore} label="Avg. Lighthouse Score" />
-        </Reveal>
+        <div className="relative">
+          <div
+            className="pointer-events-none absolute inset-0 -z-10 blur-[80px]"
+            style={{ background: "radial-gradient(circle, var(--glow-secondary) 0%, transparent 70%)" }}
+            aria-hidden="true"
+          />
+          <Reveal className="relative flex h-full flex-col items-center justify-center rounded-3xl border border-charcoal-foreground/10 bg-charcoal-foreground/5 p-8 backdrop-blur-sm transition-shadow hover:shadow-[0_0_40px_-10px_var(--color-glow-secondary)]">
+            <ScoreRing score={performanceScore} label="Avg. Lighthouse Score" />
+          </Reveal>
+        </div>
 
         <RevealGroup className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           {commandMetrics.map((metric) => (
             <RevealItem
               key={metric.label}
-              className="rounded-2xl border border-charcoal-foreground/10 bg-charcoal-foreground/5 p-6 text-primary backdrop-blur-sm transition-colors hover:border-charcoal-foreground/25"
+              className="rounded-2xl border border-charcoal-foreground/10 bg-charcoal-foreground/5 p-6 text-primary backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-charcoal-foreground/25"
             >
               <div className="font-display text-2xl text-charcoal-foreground">
                 <AnimatedCounter value={metric.value} suffix={metric.suffix} />

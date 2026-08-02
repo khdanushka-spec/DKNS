@@ -29,6 +29,12 @@ export function Hero() {
 
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-bg/40 via-bg/70 to-bg" />
 
+      <div
+        className="pointer-events-none absolute left-1/2 top-[40%] h-[520px] w-[820px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[120px]"
+        style={{ background: "radial-gradient(circle, var(--glow-primary) 0%, transparent 70%)" }}
+        aria-hidden="true"
+      />
+
       <Container className="relative z-10 flex flex-1 flex-col items-center justify-center text-center">
         <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <Eyebrow>

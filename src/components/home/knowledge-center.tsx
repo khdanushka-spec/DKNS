@@ -30,7 +30,7 @@ export function KnowledgeCenter() {
           <RevealItem key={post.slug} className={i === 0 ? "md:col-span-2" : undefined}>
             <Link
               href={`/blog/${post.slug}`}
-              className="glass-surface glow-border group flex h-full flex-col rounded-2xl p-6"
+              className="glass-surface glow-border group flex h-full flex-col rounded-2xl p-6 transition-transform duration-300 hover:-translate-y-1"
             >
               <Badge>{post.category}</Badge>
               <h3 className="mt-4 font-display text-lg font-medium leading-snug">{post.title}</h3>

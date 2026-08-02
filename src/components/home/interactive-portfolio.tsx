@@ -38,7 +38,7 @@ export function InteractivePortfolio() {
               href={`/portfolio/${project.slug}`}
               onMouseEnter={() => setHoveredSlug(project.slug)}
               onMouseLeave={() => setHoveredSlug(null)}
-              className="glass-surface glow-border group block h-full overflow-hidden rounded-2xl"
+              className="glass-surface glow-border group block h-full overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-1"
             >
               <div className="relative h-56 p-3">
                 <DeviceMockup gradient={project.coverGradient} hovered={hoveredSlug === project.slug} name={project.name} />

@@ -24,31 +24,38 @@ export function DigitalOS() {
         </p>
       </Reveal>
 
-      <Reveal delay={0.1} className="glass-surface relative mt-14 h-[420px] overflow-hidden rounded-3xl md:h-[520px]">
-        <EcosystemCanvas
-          nodes={ecosystemNodes}
-          edges={ecosystemEdges}
-          interactive
-          selectedId={selected}
-          onSelect={(id) => id && setSelected(id)}
-          className="absolute inset-0"
+      <div className="relative mt-14">
+        <div
+          className="pointer-events-none absolute inset-0 -z-10 blur-[100px]"
+          style={{ background: "radial-gradient(circle, var(--glow-primary) 0%, transparent 70%)" }}
+          aria-hidden="true"
         />
+        <Reveal delay={0.1} className="glass-surface glow-border relative h-[420px] overflow-hidden rounded-3xl md:h-[520px]">
+          <EcosystemCanvas
+            nodes={ecosystemNodes}
+            edges={ecosystemEdges}
+            interactive
+            selectedId={selected}
+            onSelect={(id) => id && setSelected(id)}
+            className="absolute inset-0"
+          />
 
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center p-6">
-          {selectedNode && (
-            <motion.div
-              key={selectedNode.id}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-              className="glass-surface pointer-events-auto max-w-md rounded-2xl p-5 text-center"
-            >
-              <h3 className="font-display text-display-3 text-primary">{selectedNode.label}</h3>
-              <p className="mt-1.5 text-sm text-fg-muted">{selectedNode.description}</p>
-            </motion.div>
-          )}
-        </div>
-      </Reveal>
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center p-6">
+            {selectedNode && (
+              <motion.div
+                key={selectedNode.id}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+                className="glass-surface pointer-events-auto max-w-md rounded-2xl p-5 text-center"
+              >
+                <h3 className="font-display text-display-3 text-primary">{selectedNode.label}</h3>
+                <p className="mt-1.5 text-sm text-fg-muted">{selectedNode.description}</p>
+              </motion.div>
+            )}
+          </div>
+        </Reveal>
+      </div>
 
       <div className="mt-6 flex flex-wrap justify-center gap-2" role="group" aria-label="Select a system component">
         {ecosystemNodes.map((node) => (

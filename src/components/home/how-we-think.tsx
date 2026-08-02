@@ -15,10 +15,15 @@ export function HowWeThink() {
 
         <RevealGroup className="space-y-10 lg:pt-2">
           {principles.map((p) => (
-            <RevealItem key={p.index} className="flex gap-6 border-t border-border pt-6 first:border-t-0 first:pt-0">
-              <span className="font-display text-sm text-fg-faint">{p.index}</span>
+            <RevealItem
+              key={p.index}
+              className="group flex gap-6 border-t border-border pt-6 transition-colors first:border-t-0 first:pt-0 hover:border-border-strong"
+            >
+              <span className="font-display text-sm font-semibold [background-image:var(--gradient-signature)] bg-clip-text text-transparent">
+                {p.index}
+              </span>
               <div>
-                <h3 className="font-display text-display-3">{p.title}</h3>
+                <h3 className="font-display text-display-3 transition-colors group-hover:text-primary">{p.title}</h3>
                 <p className="mt-2 text-sm text-fg-muted">{p.detail}</p>
               </div>
             </RevealItem>

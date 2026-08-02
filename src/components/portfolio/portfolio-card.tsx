@@ -15,7 +15,7 @@ export function PortfolioCard({ project }: { project: Project }) {
       href={`/portfolio/${project.slug}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="glass-surface glow-border group block overflow-hidden rounded-2xl"
+      className="glass-surface glow-border group block overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-1"
     >
       <div className="relative h-56 p-3">
         <DeviceMockup gradient={project.coverGradient} hovered={hovered} name={project.name} variant="compact" />
