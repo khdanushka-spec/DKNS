@@ -12,4 +12,10 @@ export function getResendClient() {
   return new Resend(key);
 }
 
-export const APPLICATIONS_FROM = process.env.APPLICATIONS_FROM_EMAIL ?? "DKNS Digital Careers <careers@dkns.ai>";
+/**
+ * Defaults to Resend's shared onboarding domain, which sends immediately
+ * with zero setup. Once dkns.ai is verified in Resend (Domains -> Add
+ * Domain), set APPLICATIONS_FROM_EMAIL to a dkns.ai address instead — no
+ * other code change needed.
+ */
+export const APPLICATIONS_FROM = process.env.APPLICATIONS_FROM_EMAIL ?? "DKNS Digital Careers <onboarding@resend.dev>";
