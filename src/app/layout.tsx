@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { MotionProviders } from "@/components/motion-providers";
 import { Navbar } from "@/components/layout/navbar";
+import { AnnouncementBanner } from "@/components/layout/announcement-banner";
 import { Footer } from "@/components/layout/footer";
 import { WhatsAppButton } from "@/components/layout/whatsapp-button";
 import { site } from "@/content/site";
@@ -80,6 +81,7 @@ export default function RootLayout({
         />
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           <MotionProviders>
+            <AnnouncementBanner />
             <Navbar />
             <main className="flex-1">{children}</main>
             <Footer />
