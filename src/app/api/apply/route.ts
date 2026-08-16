@@ -60,25 +60,31 @@ export async function POST(request: Request) {
 
   const resumeBuffer = Buffer.from(await resume.arrayBuffer());
 
-  const { error } = await resend.emails.send({
-    from: APPLICATIONS_FROM,
-    to: site.email,
-    replyTo: email,
-    subject: `New Application: ${jobTitle} — ${name}`,
-    html: `
-      <h2>New application for ${jobTitle}</h2>
-      <p><strong>Name:</strong> ${name}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ""}
-      ${linkedin ? `<p><strong>LinkedIn / Portfolio:</strong> ${linkedin}</p>` : ""}
-      ${message ? `<p><strong>Note:</strong><br />${message.replace(/\n/g, "<br />")}</p>` : ""}
-    `,
-    attachments: [{ filename: resume.name, content: resumeBuffer }],
-  });
+  try {
+    const { error } = await resend.emails.send({
+      from: APPLICATIONS_FROM,
+      to: site.email,
+      replyTo: email,
+      subject: `New Application: ${jobTitle} — ${name}`,
+      html: `
+        <h2>New application for ${jobTitle}</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ""}
+        ${linkedin ? `<p><strong>LinkedIn / Portfolio:</strong> ${linkedin}</p>` : ""}
+        ${message ? `<p><strong>Note:</strong><br />${message.replace(/\n/g, "<br />")}</p>` : ""}
+      `,
+      attachments: [{ filename: resume.name, content: resumeBuffer }],
+    });
 
-  if (error) {
-    // Logged to applications.jsonl above regardless, so nothing is lost.
-    return NextResponse.json({ ok: true, emailed: false, emailError: error.message });
+    if (error) {
+      // Logged above regardless, so the application itself is never lost.
+      console.error("Resend returned an error sending the application email:", error);
+      return NextResponse.json({ ok: true, emailed: false, emailError: error.message });
+    }
+  } catch (error) {
+    console.error("Resend threw sending the application email:", error);
+    return NextResponse.json({ ok: true, emailed: false });
   }
 
   return NextResponse.json({ ok: true, emailed: true });
