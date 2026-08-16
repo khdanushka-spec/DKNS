@@ -12,10 +12,6 @@ import { site } from "@/content/site";
 
 type Params = { slug: string };
 
-function applyHref(title: string) {
-  return `mailto:${site.email}?subject=${encodeURIComponent(`Application: ${title}`)}`;
-}
-
 export function generateStaticParams() {
   return jobs.map((job) => ({ slug: job.slug }));
 }
@@ -92,7 +88,7 @@ export default async function JobDetailPage({ params }: { params: Promise<Params
             <p className="mt-4 max-w-xl text-lg text-fg-muted">{job.summary}</p>
 
             <div className="mt-8">
-              <Button href={applyHref(job.title)} variant="gradient" size="lg">
+              <Button href={`/careers/${job.slug}/apply`} variant="gradient" size="lg">
                 Apply for This Role
                 <ArrowUpRight className="h-4 w-4" strokeWidth={1.75} />
               </Button>
@@ -146,7 +142,7 @@ export default async function JobDetailPage({ params }: { params: Promise<Params
             <p className="max-w-md text-sm text-fg-muted">
               Send your resume and a short note about relevant work — we reply within one business day.
             </p>
-            <Button href={applyHref(job.title)} variant="gradient" size="lg">
+            <Button href={`/careers/${job.slug}/apply`} variant="gradient" size="lg">
               Apply for This Role
               <ArrowUpRight className="h-4 w-4" strokeWidth={1.75} />
             </Button>

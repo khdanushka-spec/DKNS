@@ -65,7 +65,7 @@ export default function CareersPage() {
                   <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" strokeWidth={1.75} />
                 </span>
               </Link>
-              <Button href={`mailto:${site.email}?subject=${encodeURIComponent(`Application: ${job.title}`)}`} variant="secondary" className="shrink-0">
+              <Button href={`/careers/${job.slug}/apply`} variant="secondary" className="shrink-0">
                 Apply
                 <ArrowUpRight className="h-4 w-4" strokeWidth={1.75} />
               </Button>
